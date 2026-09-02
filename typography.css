@@ -1,0 +1,199 @@
+/* NeuroProfile Web 0.16: typography, saved display settings, and theater controls */
+
+.chart-stage [data-tooltip] {
+  cursor: default !important;
+}
+
+.font-control[aria-label="Figure font size"] {
+  display: none !important;
+}
+
+.np012-typography-settings,
+.np012-saved-settings {
+  margin-top: .6rem;
+  border: 1px solid #b8c3cc;
+  border-radius: .45rem;
+  background: #f8fafb;
+}
+
+.np012-typography-settings > summary,
+.np012-saved-settings > summary {
+  padding: .55rem .7rem;
+  color: #172733;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.np012-typography-settings[open] > summary,
+.np012-saved-settings[open] > summary {
+  border-bottom: 1px solid #d6dde3;
+}
+
+.np012-typography-body,
+.np012-saved-body {
+  padding: .6rem .7rem .75rem;
+}
+
+.np012-font-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem .55rem;
+  margin-top: .6rem;
+}
+
+.np012-size-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px;
+  gap: .45rem;
+  align-items: center;
+  min-width: 0;
+  color: #243746;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.np012-size-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .25rem;
+  align-items: center;
+}
+
+.np012-size-control input {
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+  padding: .3rem .4rem;
+  color: #172733;
+  background: #ffffff;
+  border: 1px solid #8796a2;
+  border-radius: 5px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.np012-size-unit {
+  color: #536674;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.np012-typography-actions,
+.np012-saved-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .45rem;
+  margin-top: .65rem;
+}
+
+.np012-save-status {
+  min-height: 1.25rem;
+  margin: .45rem 0 0;
+  color: #405662;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.np012-theater-controls {
+  display: none;
+}
+
+body.np011-theater-open .np012-theater-controls {
+  position: absolute;
+  z-index: 52;
+  top: 8px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 6px;
+  background: rgba(245, 248, 250, .96);
+  border: 1px solid #8a9aa5;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(14, 27, 36, .18);
+}
+
+.np012-theater-toggle {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 7px;
+  color: #172733;
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.np012-theater-toggle:hover {
+  background: #e8eef1;
+}
+
+.np012-theater-toggle input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.np011-theater-dialog .preview-card {
+  position: relative;
+}
+
+.np011-theater-dialog .np011-theater-bar {
+  position: absolute;
+  z-index: 53;
+  top: 8px;
+  right: 10px;
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.np011-theater-dialog .np011-theater-button {
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(245, 248, 250, .97);
+  border-color: #71838f;
+  box-shadow: 0 3px 12px rgba(14, 27, 36, .2);
+}
+
+.np011-theater-dialog .np011-theater-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.np011-theater-dialog .chart-stage {
+  padding: 48px 8px 8px;
+}
+
+.np012-hover-disabled [data-tooltip] {
+  cursor: default !important;
+}
+
+.np012-typography-settings :focus-visible,
+.np012-saved-settings :focus-visible,
+.np012-theater-controls :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 500px) {
+  .np012-font-grid,
+  .np012-typography-actions,
+  .np012-saved-actions {
+    grid-template-columns: 1fr;
+  }
+
+  body.np011-theater-open .np012-theater-controls {
+    max-width: calc(100vw - 64px);
+    flex-wrap: wrap;
+  }
+}

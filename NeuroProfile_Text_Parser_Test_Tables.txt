@@ -1,0 +1,73 @@
+NEUROPROFILE WEB 0.16 TEXT PARSER TEST TABLES
+
+Paste one example at a time into Paste score table. Review the preview before loading.
+
+============================================================
+EXAMPLE 1: TAB-DELIMITED, EXPLICIT DOMAINS, MULTIPLE SCORES
+============================================================
+Cognitive Domain	Test Name	Raw Score	T-score	Percentile	Score Label
+Processing Speed	Trail Making Test Part A	31	45	31	Average
+Attention	Digit Span Forward	8	40	16	Low Average
+Memory: Immediate Recall	HVLT-R Total Recall	21	34	5	Below Average
+Memory: Delayed Recall	HVLT-R Delayed Recall	6	37	10	Low Average
+Language	Boston Naming Test	27	50	50	Average
+Executive Functions	Trail Making Test Part B	89	46	34	Average
+
+============================================================
+EXAMPLE 2: MARKDOWN, DOMAINS INFERRED FROM TEST NAMES
+============================================================
+| Test | Scaled Score | Percentile |
+|---|---:|---:|
+| Digit Span | 8 | 25 |
+| Boston Naming Test | 11 | 63 |
+| Trail Making Test Part B | 7 | 16 |
+| HVLT-R Total Recall | 6 | 9 |
+| HVLT-R Delayed Recall | 5 | 5 |
+
+============================================================
+EXAMPLE 3: FIXED-WIDTH TEXT WITH DOMAIN SECTION HEADINGS
+============================================================
+Test Name                                      Raw Score   T-score   Percentile   Score Label
+Premorbid Functioning
+HART-B                                         24          48        42           Average
+Motor Skills
+Grooved Pegboard: Dominant Hand                73          39        14           Low Average
+Grooved Pegboard: Nondominant Hand             79          36        8            Below Average
+Processing Speed
+Trail Making Test (TMT): Part A                31          45        31           Average
+Attention
+Digit Span: Longest Span Forward                6          44        27           Average
+Memory: Immediate Recall
+HVLT-R: Total Recall                            21          34        5            Below Average
+Memory: Delayed Recall
+HVLT-R: Delayed Recall                           6          37        10           Low Average
+Language
+Boston Naming Test (BNT-30)                    27          50        50           Average
+Executive Functions
+Trail Making Test (TMT): Part B                 89          46        34           Average
+
+============================================================
+EXAMPLE 4: TRANSPOSED TABLE, TESTS IN COLUMNS
+============================================================
+Test Name,WAIS-V Vocabulary,WAIS-V Block Design,WAIS-V Coding
+Domain,Language,Visuospatial / Construction,Processing Speed
+Standard Score,105,95,90
+
+============================================================
+EXAMPLE 5: GENERIC SCORE PLUS METRIC COLUMN
+============================================================
+Domain | Test | Score | Metric
+Attention | Digit Span | 8 | Scaled
+Language | Boston Naming Test | 45 | T-score
+Processing Speed | Coding | 0.35 | z-score
+Memory: Delayed Recall | HVLT-R Delayed Recall | 7 | Percentile
+
+============================================================
+EXAMPLE 6: AMBIGUOUS GENERIC SCORE REQUIRING A PARSER SETTING
+============================================================
+Test Name	Score
+Trail Making Test Part A	45
+Digit Span	50
+Boston Naming Test	55
+
+For Example 6, open Parser options and set Generic Score column to Treat as T-score.

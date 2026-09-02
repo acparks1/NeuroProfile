@@ -1,0 +1,214 @@
+/* NeuroProfile Web 0.16: theater mode and figure color controls */
+
+.np011-theater-bar {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 40px;
+  padding: 5px 7px;
+  background: #f7f9fa;
+  border-bottom: 1px solid var(--line);
+}
+
+.np011-theater-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 5px 10px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.np011-theater-button:hover:not(:disabled) {
+  background: #eaf0f3;
+  border-color: #879daa;
+}
+
+.np011-theater-button:disabled {
+  color: #65747d;
+  background: #eef1f3;
+  border-color: #d6dde2;
+  cursor: not-allowed;
+}
+
+.np011-theater-button svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.np011-theater-dialog {
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+}
+
+.np011-theater-dialog::backdrop {
+  background: rgba(6, 13, 18, .88);
+  backdrop-filter: blur(1px);
+}
+
+.np011-theater-dialog .preview-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid #172631;
+  border-radius: 8px;
+  box-shadow: 0 18px 56px rgba(0, 0, 0, .48);
+}
+
+.np011-theater-dialog .np011-theater-bar {
+  flex: 0 0 auto;
+  background: #edf1f3;
+}
+
+.np011-theater-dialog .chart-stage {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: auto;
+}
+
+.np011-theater-dialog .chart-stage svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.np011-theater-open {
+  overflow: hidden;
+}
+
+.np011-color-settings {
+  margin-top: .6rem;
+  border: 1px solid #b8c3cc;
+  border-radius: .45rem;
+  background: #f8fafb;
+}
+
+.np011-color-settings > summary {
+  padding: .55rem .7rem;
+  color: #172733;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.np011-color-settings[open] > summary {
+  border-bottom: 1px solid #d6dde3;
+}
+
+.np011-color-body {
+  padding: .6rem .7rem .75rem;
+}
+
+.np011-color-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .5rem;
+  align-items: end;
+}
+
+.np011-color-section {
+  margin-top: .65rem;
+  padding-top: .6rem;
+  border-top: 1px solid #d6dde3;
+}
+
+.np011-color-section-title {
+  margin: 0 0 .45rem;
+  color: #172733;
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.np011-color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem .55rem;
+}
+
+.np011-color-field {
+  display: grid;
+  gap: .22rem;
+  min-width: 0;
+  color: #243746;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.np011-color-control {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: .35rem;
+  align-items: center;
+}
+
+.np011-color-control input[type="color"] {
+  width: 38px;
+  height: 32px;
+  padding: 2px;
+  background: #ffffff;
+  border: 1px solid #8796a2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.np011-color-control input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+  padding: .3rem .4rem;
+  color: #172733;
+  background: #ffffff;
+  border: 1px solid #8796a2;
+  border-radius: 5px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.np011-reset-colors {
+  min-height: 35px;
+  white-space: nowrap;
+}
+
+.np011-color-settings :focus-visible,
+.np011-theater-button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 460px) {
+  .np011-color-grid,
+  .np011-color-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np011-theater-dialog::backdrop {
+    backdrop-filter: none;
+  }
+}
+

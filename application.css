@@ -1,0 +1,344 @@
+/* NeuroProfile Web 0.16: consolidated interface, clipboard export, and theater markup */
+
+#np014-compat-controls,
+.profile-aggregation-field,
+.final-toggle-group,
+.font-control,
+#np012-theater-controls {
+  display: none !important;
+}
+
+.np014-layout-section,
+#np010-settings,
+#np012-typography-settings,
+#np011-color-settings,
+#np012-saved-settings {
+  margin-top: 8px;
+  overflow: clip;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fbfcfd;
+}
+
+.np014-layout-section > summary,
+#np010-settings > summary,
+#np012-typography-settings > summary,
+#np011-color-settings > summary,
+#np012-saved-settings > summary {
+  min-height: 40px;
+  padding: 9px 11px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.25;
+  cursor: pointer;
+  user-select: none;
+}
+
+.np014-layout-section[open] > summary,
+#np010-settings[open] > summary,
+#np012-typography-settings[open] > summary,
+#np011-color-settings[open] > summary,
+#np012-saved-settings[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.np014-layout-body {
+  display: grid;
+  gap: 9px;
+  padding: 10px;
+}
+
+.np014-layout-body > .toggle-list,
+.np014-layout-body > .display-toggle-group,
+.np014-layout-body > .conditional-panel,
+.np014-layout-body > .display-copy-field,
+.np014-layout-body > .display-title-field {
+  margin: 0;
+}
+
+.np014-appearance-card .section-heading {
+  margin-bottom: 2px;
+}
+
+.np014-appearance-card > details:first-of-type {
+  margin-top: 5px;
+}
+
+.np014-copy-status {
+  min-height: 17px;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.np014-copy-status.is-success {
+  color: #166b62;
+  font-weight: 700;
+}
+
+.np014-copy-status.is-error {
+  color: #9b2934;
+  font-weight: 700;
+}
+
+#copyFigureButton svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.preview-card,
+.chart-stage {
+  position: relative;
+}
+
+body.np011-theater-open #np011-theater-button,
+body.np011-theater-open #np012-theater-controls,
+body.np011-theater-open .np011-theater-bar {
+  display: none !important;
+}
+
+.np014-theater-menu {
+  display: none;
+  position: absolute;
+  z-index: 30;
+  top: 12px;
+  right: 12px;
+  width: min(310px, calc(100% - 24px));
+  color: #172631;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body.np011-theater-open .np014-theater-menu {
+  display: block;
+}
+
+.np014-theater-menu > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border: 1px solid #6c7b86;
+  border-radius: 9px;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 4px 16px rgba(10,22,31,.18);
+  color: #172631;
+  cursor: pointer;
+  list-style: none;
+}
+
+.np014-theater-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.np014-theater-menu > summary svg {
+  width: 21px;
+  height: 21px;
+}
+
+.np014-theater-menu[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #fff;
+}
+
+.np014-theater-panel {
+  margin-top: -1px;
+  padding: 11px;
+  border: 1px solid #6c7b86;
+  border-radius: 9px 0 9px 9px;
+  background: rgba(255,255,255,.99);
+  box-shadow: 0 8px 26px rgba(10,22,31,.24);
+}
+
+.np014-theater-panel fieldset {
+  min-width: 0;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+}
+
+.np014-theater-panel legend {
+  display: block;
+  width: 100%;
+  margin: 0 0 7px;
+  color: #334b5c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.np014-theater-toggles {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 7px;
+}
+
+.np014-theater-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 1px solid #d2dbe1;
+  border-radius: 7px;
+  background: #f7f9fa;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.np014-theater-toggle input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+}
+
+.np014-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 6px;
+}
+
+.np014-tool-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 1px solid #aebbc4;
+  border-radius: 7px;
+  background: #fff;
+  color: #172631;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.np014-tool-button:hover {
+  background: #eef3f6;
+}
+
+.np014-tool-button[aria-pressed="true"] {
+  border-color: #1f667f;
+  background: #e7f1f4;
+  box-shadow: inset 0 0 0 1px #1f667f;
+}
+
+.np014-tool-swatch {
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 50%;
+  background: var(--swatch,#111);
+}
+
+.np014-markup-size {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) 42px;
+  gap: 8px;
+  align-items: center;
+  margin-top: 9px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.np014-markup-size input[type="range"] {
+  width: 100%;
+}
+
+.np014-markup-size output {
+  min-width: 38px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.np014-theater-actions {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 7px;
+  padding-top: 9px;
+  border-top: 1px solid #d7e0e5;
+}
+
+.np014-theater-actions button {
+  min-height: 36px;
+}
+
+.np014-exit-theater {
+  border-color: #9b2934 !important;
+  background: #fff7f7 !important;
+  color: #8d202b !important;
+  font-weight: 800 !important;
+}
+
+.np014-markup-canvas {
+  position: absolute;
+  z-index: 12;
+  display: none;
+  touch-action: none;
+  user-select: none;
+}
+
+body.np011-theater-open .np014-markup-canvas {
+  display: block;
+}
+
+.np014-markup-canvas[data-tool="pointer"] {
+  pointer-events: none;
+  cursor: default;
+}
+
+.np014-markup-canvas[data-tool="black"],
+.np014-markup-canvas[data-tool="blue"],
+.np014-markup-canvas[data-tool="red"] {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.np014-markup-canvas[data-tool="eraser"] {
+  pointer-events: auto;
+  cursor: cell;
+}
+
+.np014-markup-canvas[data-tool="laser"] {
+  pointer-events: auto;
+  cursor: none;
+}
+
+.np014-laser-pointer {
+  position: absolute;
+  z-index: 13;
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,.92);
+  border-radius: 50%;
+  background: #e00016;
+  box-shadow: 0 0 0 4px rgba(224,0,22,.22),0 0 18px 7px rgba(224,0,22,.62);
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+}
+
+body.np011-theater-open .np014-laser-pointer.is-visible {
+  display: block;
+}
+
+.np014-theater-menu :focus-visible,
+#copyFigureButton:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width:760px) {
+  .np014-theater-menu { top:8px; right:8px; }
+  .np014-tool-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+/* 0.16: floating non-Theater copy control styles are included in the standalone release. */
